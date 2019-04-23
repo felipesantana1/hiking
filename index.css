@@ -46,6 +46,7 @@ header div.logo h1{
 }
 
 header nav{
+    margin: auto;
     height: 10vh;
     flex: 4;
 }
@@ -80,34 +81,6 @@ header nav ul li:hover a{
     background: rgb(255, 178, 126);
     text-decoration: none;
     color: #000;
-}
-
-header div.social_medias{
-    margin: 0;
-    padding: 0;
-    float: right;
-    flex: 2;
-    line-height: 10vh;
-}
-
-header div.social_medias i{
-    padding: 10px;
-    margin: 0.5em;
-    background-color: rgba(159, 71, 0, 0.8);
-    border-radius: 50%;
-    font-size: 14px;
-}
-
-header div.social_medias i:hover{
-    animation: 1s ease-in-out infinite animate;  
-    cursor: pointer;
-}
-
-@keyframes animate{
-
-    100%{
-        transform: rotate(360deg)
-    }
 }
 
 div.landing{
@@ -210,52 +183,269 @@ div.landing div.form form input::placeholder{
     color: rgba(159, 71, 0, 0.8);
 }
 
+div.social_medias{
+    padding: 0;
+    margin: 1em;
+    height: 300px;
+    width: auto;
+    margin: 2em;
+    padding: 1em;
+    display: grid;
+}
+
+div.social_medias h2{
+    padding: 0;
+    margin: 0;
+    color: rgb(220, 141, 57);
+    font-size: 48px;
+    text-transform: capitalize;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+div.social_medias div.icons{
+    padding: 1em;
+    margin: auto;;
+    height: 80%;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.social_medias i{
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(159, 71, 0, 0.8);
+    border-radius: 30%;
+    font-size: 56px;
+}
+
+div.social_medias i:hover{
+    animation: 1s ease-in-out infinite animate;  
+    cursor: pointer;
+}
+
+@keyframes animate{
+
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
 div.products_wrapper{
     padding: 5em;
     /* margin: 2em auto; */
     height: fit-content;
     width: 100%;
-    background-image: url("./images/beiheng-guo-1470149-unsplash.jpg");
+    background-image: url("./images/hiker.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     box-sizing: border-box;
+    display: grid;
 }
 
 div.products_wrapper h1{
     padding: 0;
-    margin: 0 0 1em;
+    margin: 0;
     text-align: center;
-    color: rgb(255, 202, 159);
+    font-size: 56px;
+    color: rgba(159, 71, 0, 0.8);
 }
 
 div.products_wrapper section.products{
     padding: 0;
-    margin: auto;
-    height: 100vh;
-    width: 100%;
+    margin: 2em auto;
+    height: 120vh;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(1fr, auto);
-    grid-gap: 1.5em;
+    grid-gap: 2em 4em;
 }
 
 div.products_wrapper section.products .product{
     padding: 10px;
     margin: auto;
-    background-color: rgba(220, 141, 57, 0.6666);
-    border: 1px solid #000;
+    min-width: fit-content;
+    height: 90%;
+    width: 90%;
+    background-color: rgba(220, 141, 57, 0.8);
+    box-shadow: 2px 2px 4px 6px #333;
     display: flex;
     flex-direction: column;
-    color: rgb(255, 202, 159);
+    color: #000;
 }
 
 div.products_wrapper section.products .product h3{
+    padding: 20px;
+    margin: auto;
+}
+
+div.products_wrapper section.products .product p{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+div.products_wrapper section.products .product img{
+    height: 45%;
+    width: 50%;
     padding: 1em;
     margin: auto;
 }
 
-div.products_wrapper section.products .product img{
-    height: 150px;
-    width: 200px;
+div.products_wrapper button{
+    padding: 0;
+    margin: 2em auto;
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    background-color: rgb(220, 141, 57);
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+
+div.team{
+    height: fit-content;
+    width: auto;
+    background-color: whitesmoke;
+    background-attachment: fixed;
+}
+
+div.team h1{
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+    font-size: 48px;
+    color: rgb(148, 92, 46);
+    text-decoration: underline rgb(148, 92, 46);
+}
+
+div.team section.our_team{
+    padding: 2em;
+    margin: 0;
+    height: fit-content;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(1fr, auto);
+    grid-gap: 5em 2em;
+}
+
+div.team section.our_team img{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+div.team section.our_team div.desc{
+    padding: 0;
+    margin: auto;
+}
+
+div.team section.our_team div.desc h2{
     padding: 1em;
     margin: auto;
+    text-align: center;
+    font-size: 36px;
+    color: rgb(148, 92, 46);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+div.team section.our_team div.desc p{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(220, 141, 57);
+}
+
+footer{
+    background-color: rgb(130, 83, 51);
+    height: 40vh;
+    display: flex;
+}
+
+footer div.contact{
+    flex: 1;
+    padding: 1em;
+    margin: auto 0;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-gap: none;
+}
+
+footer div.contact i{
+    padding: 10px;
+    margin: auto;;
+    font-size: 30px;    
+}
+
+footer div.contact p{
+    padding: 10px;
+    margin: auto 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+footer div.info{
+    flex: 1;
+    margin: auto;
+}
+
+footer div.info{
+    padding: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+footer div.info p{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    flex: 1;
+}
+
+footer div.info form{
+    padding: 0;
+    margin: 1em 0;
+    height: fit-content;
+    width: 80%;
+    display: flex;
+}
+
+footer div.info form input[type="email"]{
+    margin: auto;
+    padding: 0 10px;
+    flex: 4;
+    height: 38px;
+    background-color: rgb(255, 189, 119);
+    border: none;
+}
+
+footer div.info form input[type="submit"]{
+    margin: auto 5px;
+    padding: 10px;
+    flex: 1;
+    height: 40px;
+    background-color: rgb(220, 141, 57);
+    color: #000;
+    border: none;
+    border-radius: 5px; 
+}
+
+footer div.info div.icons i{
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    margin: auto 0.5em;
+    text-align: center;
+    border-radius: 30%;
+    font-size: 48px;
 }
