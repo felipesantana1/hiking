@@ -50,6 +50,21 @@ header nav{
     height: 10vh;
     flex: 4;
 }
+
+header div.burger{
+    display: none;
+    padding: 10px;
+    margin: 0;
+    line-height: 8vh;
+    cursor: pointer;
+}
+header div.burger div{
+    height: 2.5px;
+    width: 25px;
+    margin: 5px;
+    background-color:rgb(108, 49, 0);
+}
+
 header nav ul{
     margin: auto;
     width: 100%;
@@ -83,6 +98,41 @@ header nav ul li:hover a{
     color: #000;
 }
 
+@media only screen and (max-width: 780px){
+    div.opener{
+        min-height: fit-content;
+    }
+
+    header{
+        display: flex;
+        min-height: fit-content;
+    }
+
+    header div.burger{
+        display: block;
+        margin: auto;
+    }
+    header nav{ display: none }
+
+    header nav.active{
+        height: 50vh;
+        width: 80%;
+        display: block;
+        background-color: #000;
+    }
+
+    header nav.active ul{
+       display: flex;
+        flex-direction: row;
+    }
+
+    header nav.active ul li{
+        flex: 1;
+    }
+
+
+}
+
 div.landing{
     padding: 0;
     margin: auto;
@@ -93,7 +143,8 @@ div.landing{
 }
 
 div.landing div.message{
-    margin: 0 2em;
+    margin: auto;
+    padding: 1em;
     width: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 40px;
@@ -183,6 +234,19 @@ div.landing div.form form input::placeholder{
     color: rgba(159, 71, 0, 0.8);
 }
 
+@media only screen and (max-width: 780px){
+    div.landing{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+    }
+
+    div.landing div.form{
+        width: 50%;
+        margin: 1em auto;
+    }
+}
+
 div.social_medias{
     padding: 0;
     margin: 1em;
@@ -258,18 +322,50 @@ div.products_wrapper h1{
 div.products_wrapper section.products{
     padding: 0;
     margin: 2em auto;
-    height: 120vh;
+    max-height: fit-content;
+    min-height: 120vh;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: minmax(30%, auto);
     grid-auto-rows: minmax(1fr, auto);
-    grid-gap: 2em 4em;
+    grid-gap: 2em;
+}
+
+@media only screen and (max-width: 1130px){
+    div.products_wrapper section.products{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(1fr, auto);
+        grid-gap: 2em 4em;
+    }
+}
+
+@media only screen and (max-width: 960px){
+    div.products_wrapper{
+        padding: 0;
+        /* margin: 2em auto; */
+        height: fit-content;
+        width: 100%;
+        background-image: url("./images/hiker.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        display: grid;
+    }
+    div.products_wrapper section.products{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(1fr, auto);
+        grid-gap: 2em;
+    }
 }
 
 div.products_wrapper section.products .product{
-    padding: 10px;
+    padding: 0;
     margin: auto;
-    min-width: fit-content;
+    min-height: fit-content;
     height: 90%;
     width: 90%;
     background-color: rgba(220, 141, 57, 0.8);
@@ -287,11 +383,12 @@ div.products_wrapper section.products .product h3{
 div.products_wrapper section.products .product p{
     font-size: 16px;
     font-weight: 600;
+    text-align: center;
 }
 
 div.products_wrapper section.products .product img{
     height: 45%;
-    width: 50%;
+    width: 80%;
     padding: 1em;
     margin: auto;
 }
@@ -302,7 +399,7 @@ div.products_wrapper button{
     height: 40px;
     width: 300px;
     text-align: center;
-    background-color: rgb(220, 141, 57);
+    background-color: rgba(220, 141, 57, 0.8);
     border: 2px solid #000;
     border-radius: 20px;
 }
@@ -423,8 +520,8 @@ footer div.info form{
 footer div.info form input[type="email"]{
     margin: auto;
     padding: 0 10px;
-    flex: 4;
     height: 38px;
+    width: 80%;
     background-color: rgb(255, 189, 119);
     border: none;
 }
@@ -432,8 +529,8 @@ footer div.info form input[type="email"]{
 footer div.info form input[type="submit"]{
     margin: auto 5px;
     padding: 10px;
-    flex: 1;
     height: 40px;
+    width: 100px;
     background-color: rgb(220, 141, 57);
     color: #000;
     border: none;
@@ -448,4 +545,35 @@ footer div.info div.icons i{
     text-align: center;
     border-radius: 30%;
     font-size: 48px;
+}
+
+@media only screen and (max-width: 725px){
+    div.team section.our_team{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    footer{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer div.contact{
+        margin: auto;
+    }
+
+    footer div.info{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+    }
+    footer div.info form{
+        margin: 1em auto;
+    }
+
+    footer div.info .icons{
+        margin: auto;
+    }
 }
