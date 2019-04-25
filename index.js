@@ -12,5 +12,11 @@ $(document).ready(function(){
             $("header").css("background-color", "rgba(130, 83, 51, 0.0)")
         }
     });
+    
+    if($(window).width() < 780){
+        $("#picture").insertBefore("#execs")
+    } else {
+        $("#execs").insertBefore("#picture")
+    }
 });
 
