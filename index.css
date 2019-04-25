@@ -4,9 +4,10 @@ html, body{
     background: #000;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
 }
 
-div.opener{
+.opener{
     padding: 0;
     margin: 0;
     height: 100%;
@@ -15,64 +16,68 @@ div.opener{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    display: grid;
-    grid-template-rows: auto 1fr;
     grid-gap: 1em;
 }
 
-header{
+.header{
     padding: 0;
     margin: 0;
     height: 10vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
+    position: fixed;
 }
 
-header div.logo{
+.header .logo{
     margin: auto 2em;
     padding: 0;
     flex: 1;
 }
 
-header div.logo h1{
+.header .logo h1{
     padding: 0;
     margin: 0;
     font-size: 60px;
     font-weight: 600;
     color: rgba(108, 49, 0, 0.5);
     line-height: 5vh;
+    transition: 1s;
 }
 
-header nav{
+.header .logo h1:hover{
+    transform: scale(1.1);
+    color: rgba(64, 29, 0, 0.8);
+}
+
+.header nav{
     margin: auto;
     height: 10vh;
     flex: 4;
 }
 
-header div.burger{
+.header .burger{
     display: none;
     padding: 10px;
     margin: 0;
     line-height: 8vh;
     cursor: pointer;
 }
-header div.burger div{
+.header .burger div{
     height: 2.5px;
     width: 25px;
     margin: 5px;
     background-color:rgb(108, 49, 0);
 }
 
-header nav ul{
+.header nav ul{
     margin: auto;
     width: 100%;
     display: flex;
     flex-flow: row;
     padding: 0;
 }
-header nav ul li{
+.header nav ul li{
     line-height: 10vh;
     list-style: none;
     position: relative;
@@ -80,7 +85,7 @@ header nav ul li{
     margin: 0;
     box-sizing: border-box;
 }
-header nav ul li a{
+.header nav ul li a{
     min-height: 10vh;
     text-decoration: none;
     padding: 20px;
@@ -92,57 +97,57 @@ header nav ul li a{
     transition: 0.5s ease-in-out;
 }
 
-header nav ul li:hover a{
-    background: rgb(255, 178, 126);
+.header nav ul li:hover a{
+    background-color: rgba(159, 71, 0, 0.8);
     text-decoration: none;
     color: #000;
 }
 
 @media only screen and (max-width: 780px){
-    div.opener{
-        min-height: fit-content;
+    .opener{
+        height: fit-content;
     }
 
-    header{
-        display: flex;
+    .header{
         min-height: fit-content;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
     }
 
-    header div.burger{
+    .header .burger{
         display: block;
         margin: auto;
     }
-    header nav{ display: none }
+    .header nav{ display: none }
 
-    header nav.active{
+    .header nav.active{
         height: 50vh;
         width: 80%;
         display: block;
         background-color: #000;
     }
 
-    header nav.active ul{
+    .header nav.active ul{
        display: flex;
-        flex-direction: row;
+       flex-direction: column;
     }
 
-    header nav.active ul li{
+    .header nav.active ul li{
         flex: 1;
     }
-
-
 }
 
-div.landing{
+.landing{
     padding: 0;
     margin: auto;
-    height: fit-content;
+    min-height: fit-content;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
 
-div.landing div.message{
+.landing .message{
     margin: auto;
     padding: 1em;
     width: 50%;
@@ -152,7 +157,7 @@ div.landing div.message{
     flex-direction: column;
 }
 
-div.landing div.message p:first-child{
+.landing .message p:first-child{
     text-align: left;
     padding: 0 1em;
     letter-spacing: 5px;
@@ -160,7 +165,7 @@ div.landing div.message p:first-child{
     color: rgb(255, 202, 159);
 }
 
-div.landing div.message p{
+.landing .message p{
     text-align: left;
     padding: 0 1em;
     letter-spacing: 2px;
@@ -168,7 +173,7 @@ div.landing div.message p{
     color: rgb(255, 228, 194);
 }
 
-div.landing div.message button{
+.landing .message button{
     padding: 0;
     margin: auto;
     height: 40px;
@@ -178,7 +183,7 @@ div.landing div.message button{
     border-radius: 10px;
 }
 
-div.landing div.form{
+.landing .form{
     width: 30%;
     padding: 0;
     margin: auto;
@@ -187,7 +192,7 @@ div.landing div.form{
     align-self: flex-end;
 }
 
-div.landing div.form p{
+.landing .form p{
     padding: 10px;
     margin: 0;
     text-align: center;
@@ -196,7 +201,7 @@ div.landing div.form p{
     color: rgb(255, 202, 159);
 }
 
-div.landing div.form p:last-child{
+.landing .form p:last-child{
     padding: 10px;
     margin: 0;
     text-align: center;
@@ -205,7 +210,7 @@ div.landing div.form p:last-child{
     color: rgb(126, 57, 0);   
 }
 
-div.landing div.form form{
+.landing .form form{
     padding: 1em;
     margin: auto;
     display: flex;
@@ -213,14 +218,14 @@ div.landing div.form form{
     width: 90%;
 }
 
-div.landing div.form form input[type="text"], input[type="email"]{
+.landing .form form input[type="text"], input[type="email"]{
     margin: 0.8em;
     height: 30px;
     border: none;
     border-bottom: 1px solid rgb(220, 141, 57);
 }
 
-div.landing div.form form input[type="submit"]{
+.landing .form form input[type="submit"]{
     padding: 0;
     margin: auto;
     height: 40px;
@@ -230,24 +235,40 @@ div.landing div.form form input[type="submit"]{
     border-radius: 10px;
 }
 
-div.landing div.form form input::placeholder{
+.landing .form form input::placeholder{
     color: rgba(159, 71, 0, 0.8);
 }
 
 @media only screen and (max-width: 780px){
-    div.landing{
+    .landing{
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 1em;
+        height: 120vh;
     }
 
-    div.landing div.form{
-        width: 50%;
+    .landing .message{
+        width: 80%;
+    }
+
+    .landing .form{
+        width: 80%;
         margin: 1em auto;
     }
+
+    .landing .message p:first-child{
+        font-size: 22px;
+        letter-spacing: 0.5px;
+    }
+
+    .landing .message p{
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+
 }
 
-div.social_medias{
+.social_medias{
     padding: 0;
     margin: 1em;
     height: 300px;
@@ -257,7 +278,7 @@ div.social_medias{
     display: grid;
 }
 
-div.social_medias h2{
+.social_medias h2{
     padding: 0;
     margin: 0;
     color: rgb(220, 141, 57);
@@ -267,7 +288,7 @@ div.social_medias h2{
     font-family: Arial, Helvetica, sans-serif; 
 }
 
-div.social_medias div.icons{
+.social_medias .icons{
     padding: 1em;
     margin: auto;;
     height: 80%;
@@ -276,7 +297,7 @@ div.social_medias div.icons{
     flex-wrap: wrap;
 }
 
-div.social_medias i{
+.social_medias i{
     height: 60px;
     width: 60px;
     padding: 10px;
@@ -287,7 +308,7 @@ div.social_medias i{
     font-size: 56px;
 }
 
-div.social_medias i:hover{
+.social_medias i:hover{
     animation: 1s ease-in-out infinite animate;  
     cursor: pointer;
 }
@@ -369,10 +390,14 @@ div.products_wrapper section.products .product{
     height: 90%;
     width: 90%;
     background-color: rgba(220, 141, 57, 0.8);
-    box-shadow: 2px 2px 4px 6px #333;
+    box-shadow: 0.5px 0.5px 1px 2px #333;
     display: flex;
     flex-direction: column;
     color: #000;
+}
+
+div.products_wrapper section.products .product:hover{
+    box-shadow: 1px 1px 2px 4px #333;
 }
 
 div.products_wrapper section.products .product h3{
@@ -391,6 +416,12 @@ div.products_wrapper section.products .product img{
     width: 80%;
     padding: 1em;
     margin: auto;
+    transition: 1s ease-in-out;
+    overflow: hidden;
+}
+
+div.products_wrapper section.products .product img:hover{
+    transform: scale(1.1);
 }
 
 div.products_wrapper button{
